@@ -1,10 +1,10 @@
 #!/bin/sh
 #Regex based off of https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Style-Guide/Documentation-and-Comments.md#doc-01-write-comment-based-help
 
-
+# description = grep -E '(?<=.DESCRIPTION\s).*' 
 
 
 authstring='grant_type=client_credentials&client_id=57e52965-9b03-4926-bf0b-46c73ed9f50b&client_secret=BgV8Q~LSp7JXCf4jmvio2IrjdidzwspDZIJ-Sdg3&resource=https%3A%2F%2Fapi.securitycenter.microsoft.com%2f' 
-token=(curl -X POST -d $authstring https://login.microsoftonline.com/bbd10e79-3517-4c68-94dc-b722048636f0/oauth2/token) | sed -n 's/^[[:space:]]*"access_token": "\(.*\)",/\1/p'
-curl -X POST https://api.securitycenter.microsoft.com/api/libraryfiles -H "Authorization: Bearer $token" -F "file=@Get-BrowserArtifacts.ps1" -F "ParametersDescription=test" -F "HasParameters=true" -F "OverrideIfExists=true" -F "Description=testdescription"
+token=(curl -X POST -d $authstring https://login.microsoftonline.com/bbd10e79-3517-4c68-94dc-b722048636f0/oauth2/token)|sed -n 's/^[[:space:]]*"access_token": "\(.*\)",/\1/p'
+curl -X POST https://api.securitycenter.microsoft.com/api/libraryfiles --proxy http://127.0.0.1:8080 -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiJodHRwczovL2FwaS5zZWN1cml0eWNlbnRlci5taWNyb3NvZnQuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2JiZDEwZTc5LTM1MTctNGM2OC05NGRjLWI3MjIwNDg2MzZmMC8iLCJpYXQiOjE2NjM2MTA5MTksIm5iZiI6MTY2MzYxMDkxOSwiZXhwIjoxNjYzNjE0ODE5LCJhaW8iOiJFMlpnWVBES2laeGkyRGx4dmNXVGlkMVhXZXJsQUE9PSIsImFwcF9kaXNwbGF5bmFtZSI6IkxpdmVSZXNwb25zZVVwbG9hZGVyIiwiYXBwaWQiOiI1N2U1Mjk2NS05YjAzLTQ5MjYtYmYwYi00NmM3M2VkOWY1MGIiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9iYmQxMGU3OS0zNTE3LTRjNjgtOTRkYy1iNzIyMDQ4NjM2ZjAvIiwib2lkIjoiMzYxZGQzOGItNzA5MC00MjQ5LTk5N2YtMmY4MjJiZTJhOTg1IiwicmgiOiIwLkFWQUFlUTdSdXhjMWFFeVUzTGNpQklZMjhHVUVlUHdYSU5SQW9NVXdjQ0pIRzVKUUFBQS4iLCJyb2xlcyI6WyJMaWJyYXJ5Lk1hbmFnZSJdLCJzdWIiOiIzNjFkZDM4Yi03MDkwLTQyNDktOTk3Zi0yZjgyMmJlMmE5ODUiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiJiYmQxMGU3OS0zNTE3LTRjNjgtOTRkYy1iNzIyMDQ4NjM2ZjAiLCJ1dGkiOiJuYmhMT0gzd20wT0I2RExQOTZLQ0FBIiwidmVyIjoiMS4wIn0.DW1U7uvDJx5sqfcLZyBmv9sEQs7DGls_UAjwMPk5wsHww5QECzwSQF9Rz31MF7rpffwy-w1tjbSNi_MjBy5YGaI7KQJCAFX-Pacm3Ln3p7WlFeQXVdW9vvYoxSV_PR-eF73diafg8q6UXQRffm9VFgAQz0QV-OlymJXofbslI8oyPXOwn9dvNGzBXZwKFF6pOOpAfOeVqk1wq422OavWVdcC9uv_lVU5TLO0ZeKrRUy5jfl5o04S8zBxbOmucG2gQd8k8wedxuCsvrusIH2w1-0qPAjrAw88B9OCq3lNSFw8IwCBbBrOHtzJC7JuBd8FlLSi66cOWrdAb2PjsoW_ZQ" -F "file=@Get-BrowserArtifacts.ps1" -F "ParametersDescription=test" -F "HasParameters=true" -F "OverrideIfExists=true" -F "Description=testdescription"
 

@@ -18,8 +18,7 @@ def encode_multipart_formdata(fields):
         "--------------------------%s--\n" % boundary
     )
 
-    content_type = "multipart/form-data; boundary=--------------------------------%s" % boundary
-
+    content_type = "multipart/form-data;boundary=--------------------------------%s" % boundary
     return body, content_type
 
 def uploadToLiveResponse(file,desc="test",paramdesc="",override=True,token=''):
@@ -43,7 +42,9 @@ def uploadToLiveResponse(file,desc="test",paramdesc="",override=True,token=''):
         'Content-Type': contentType,
         'Connection':None,
         'Accept':'*/*',
-        'Accept-Encoding':None
+        'Accept-Encoding':None,
+        'Proxies':"http://localhost:8080",
+        'Verify':"false"
     }
     
     response = post(
