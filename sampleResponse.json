@@ -1,0 +1,95 @@
+{
+	"@odata.context": "https://api-us.securitycenter.windows.com/api/$metadata#LibraryFiles",
+	"value": [
+		{
+			"fileName": "Delete-MsMsdtKey.ps1",
+			"sha256": "6df270b82b20db3b13387dad5b093740f2cd430f8dbde59e9344d91c87f87323",
+			"description": null,
+			"creationTime": "2022-06-03T19:23:13.821683Z",
+			"lastUpdatedTime": "2022-06-03T19:23:13.821683Z",
+			"createdBy": "Christopher Smith",
+			"hasParameters": false,
+			"parametersDescription": null
+		},
+		{
+			"fileName": "Get-BrowserArtifacts.ps1",
+			"sha256": "3413f1bdf2a576c6cbc93711b522e9013ec9bb4619c3751ecf42adb2e6ab9765",
+			"description": "testdescription",
+			"creationTime": "2022-09-19T18:14:21.383264Z",
+			"lastUpdatedTime": "2022-09-19T18:14:21.383264Z",
+			"createdBy": "LiveResponseUploader",
+			"hasParameters": true,
+			"parametersDescription": "test"
+		},
+		{
+			"fileName": "Get-EdgeFolder.ps1",
+			"sha256": "66f88d9fd32ca3411a7d99b95d864f2819314835753b7538af8ccbb3a45ae475",
+			"description": null,
+			"creationTime": "2023-06-15T07:02:22.641258Z",
+			"lastUpdatedTime": "2023-06-15T07:02:22.641258Z",
+			"createdBy": "chris@demo.socdef.com",
+			"hasParameters": false,
+			"parametersDescription": null
+		},
+		{
+			"fileName": "Get-MDISensorDiagnostics.ps1",
+			"sha256": "4f71f3ba8cf79c35d48e585041caaab60e8e694eddb36637420e01be4d455d78",
+			"description": "test",
+			"creationTime": "2021-10-26T18:54:43.963Z",
+			"lastUpdatedTime": "2021-10-26T18:54:43.963Z",
+			"createdBy": "Christopher Smith",
+			"hasParameters": false,
+			"parametersDescription": null
+		},
+		{
+			"fileName": "gpupdate.ps1",
+			"sha256": "c5f217c8c267b763d4ad24ac63d5b153ede0e4c4f20c2a59445f3f604aa0a7b9",
+			"description": null,
+			"creationTime": "2021-11-09T19:55:20.113Z",
+			"lastUpdatedTime": "2021-11-09T19:55:20.113Z",
+			"createdBy": "Christopher Smith",
+			"hasParameters": false,
+			"parametersDescription": null
+		},
+		{
+			"fileName": "minidump.ps1",
+			"sha256": "206b876d9399a9c569a7b9ed11ad1939ddbe62bd4de5edf0cd93046682c3e9f0",
+			"description": null,
+			"creationTime": "2022-03-28T18:00:09.125953Z",
+			"lastUpdatedTime": "2022-03-28T18:00:09.125953Z",
+			"createdBy": "Christopher Smith",
+			"hasParameters": false,
+			"parametersDescription": null
+		},
+		{
+			"fileName": "test.ps1",
+			"sha256": "f5a9f841a17b984f3a6773d6c8573363ff7a984ecf939b670d1a8dcc84a00780",
+			"description": null,
+			"creationTime": "2023-06-15T03:54:55.526362Z",
+			"lastUpdatedTime": "2023-06-15T03:54:55.526362Z",
+			"createdBy": "chris@demo.socdef.com",
+			"hasParameters": true,
+			"parametersDescription": "Target"
+		},
+		{
+			"fileName": "test.sh",
+			"sha256": "7c25fbca732cb0aab8abd03cc8468006c840291b86fbe469e93c480fabbcdf4f",
+			"description": "test",
+			"creationTime": "2023-08-10T17:01:38.189729Z",
+			"lastUpdatedTime": "2023-08-10T17:01:38.189729Z",
+			"createdBy": "47365563-e4eb-4010-82c9-24b3448a1d7d",
+			"hasParameters": false,
+			"parametersDescription": null
+		},
+		{
+			"fileName": "volatility_2.6_win64_standalone.exe",
+			"sha256": "672a00461ffb8d59536c86192450b66d552e67809fc8584d1792b42b22c5f4e1",
+			"description": null,
+			"creationTime": "2022-03-24T18:12:09.162643Z",
+			"lastUpdatedTime": "2022-03-24T18:12:09.162643Z",
+			"createdBy": "Christopher Smith",
+			"hasParameters": false,
+			"parametersDescription": null
+		}
+	]
+}
