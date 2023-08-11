@@ -1,4 +1,7 @@
 # created by virtualenv automatically
-./venv
-./__pycache__
+__pycache__
 parameters.json
+/.vscode/
+pipeline.log
+/source/
+/pipelineenv/
