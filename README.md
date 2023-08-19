@@ -19,7 +19,7 @@ This module expects the git repository to be structured as:
 ## Requirements
 Declared Environment Variables
   - CLIENT = Azure AD Client ID
-  - AUTHORITY = Azure AD Tenant Sign in URL (https://login.microsoftonline.com/\<Tenant ID\>)
+  - AUTHORITY = Azure AD Tenant Sign in URL (https://login.microsoftonline.com/<Tenant ID\>)
   - SECRET = Azure AD Client Secret
   - LOG_NAME = Output log filename
   - LOG_LEVEL = Python Logging level
