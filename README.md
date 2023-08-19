@@ -1,4 +1,4 @@
-#MDE Live Response Library DevOps Pipeline Tool
+# MDE Live Response Library DevOps Pipeline Tool
 
 This module combines the power of DevOps tooling with available API's to increase the manageability of the Microsoft Defender for Endpoint Live Response Library.
 
@@ -16,7 +16,7 @@ This module expects the git repository to be structured as:
 ../SomeScript.sh
 ../SomeScript.sh.json
 
-##Requirements
+## Requirements
 Declared Environment Variables
   - CLIENT = Azure AD Client ID
   - AUTHORITY = Azure AD Tenant Sign in URL (https://login.microsoftonline.com/\<Tenant ID\>)
@@ -24,6 +24,6 @@ Declared Environment Variables
   - LOG_NAME = Output log filename
   - LOG_LEVEL = Python Logging level
 
-##Usage
+## Usage
 python -m LiveResponsePipeline /path/to/source/directory/of/repository
 
