@@ -1,7 +1,9 @@
 # created by virtualenv automatically
-__pycache__
 parameters.json
 /.vscode/
 pipeline.log
-/source/
 /pipelineenv/
+dist
+build
+__pycache__
+*.egg-info

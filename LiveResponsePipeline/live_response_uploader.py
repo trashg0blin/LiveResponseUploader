@@ -55,7 +55,7 @@ def upload_to_live_response(file,file_path,token,description="",param_descriptio
     """
     payload = {'file-name':file,
                 'Description':description,
-                'OverrideIfExists':'false',
+                'OverrideIfExists':'true',
                 'HasParameters':str(has_params),
                 'ParametersDescription':param_description}
     request_headers = {

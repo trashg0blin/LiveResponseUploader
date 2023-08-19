@@ -1,8 +1,11 @@
 import logging
+from os import environ
+
 from msal import ConfidentialClientApplication
 
+scope = ["https://api.securitycenter.microsoft.com/.default"]
 
-def auth_to_az(params):
+def auth_to_az():
     """Authenticates to Azure AD.
 
     Args:
@@ -12,15 +15,15 @@ def auth_to_az(params):
         str: token used in authentication
     """
     app = ConfidentialClientApplication(
-        params['client'],
-        authority=params['tenant'],
-        client_credential=params['secret']
+        environ['CLIENT'],
+        authority=environ['AUTHORITY'],
+        client_credential=environ['SECRET']
         )
     result = None
-    # check cache
-    result = app.acquire_token_silent(scopes=params["scope"], account=None)
+
+    result = app.acquire_token_silent(scopes=scope, account=None)
     if not result:
         logging.info("No suitable token exists in cache. Let's get a new one from AAD.")
-        result = app.acquire_token_for_client(scopes=params["scope"])
+        result = app.acquire_token_for_client(scopes=scope)
 
     return result['access_token']

@@ -1,5 +1,4 @@
 import hashlib
-import logging
 
 def sha256sum(filename):
     h  = hashlib.sha256()
