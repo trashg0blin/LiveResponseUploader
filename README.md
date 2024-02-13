@@ -3,7 +3,7 @@
 This module combines the power of DevOps tooling with available API's to increase the manageability of the Microsoft Defender for Endpoint Live Response Library.
 
 To populate required data fields, each script that is created within a target directory for synchronization must have a manifest file name as script.ext.json, where script.ext is the name of of your script. The JSON file serves as a metadata file that is referenced by the module at upload time and is structured as
-```
+```json
 {
     "Description":"Description goes here",
     "HasParameters":false,
@@ -25,5 +25,17 @@ Declared Environment Variables
   - LOG_LEVEL = Python Logging level
 
 ## Usage
+```python
 python -m LiveResponsePipeline /path/to/source/directory/of/repository
+```
 
+---
+
+# MDE Live Response Library Synchronization Powershell script
+
+This script is used to sync the Live Response Library with a local folder path and removes the dependency on a manifest file by referencing the documentation strings within a script.
+
+## Usage 
+```powershell
+Invoke-LiveResponseSync.ps1 -SourcePath "D:\source\libraryfiles"
+```
