@@ -1,4 +1,11 @@
-#TODO: Figure out how auth is going to work 
+<#
+    .DESCRIPTION
+    Used for synchronizing the MDE Live Response library with a local folder path
+    .PARAMETER SourcePath
+    Identifies source folder path to synchronize with the library
+    .EXAMPLE
+    Invoke-LiveResponseSync.ps1 -SourcePath "D:\source\libraryfiles" 
+#>
 param(
     [Parameter(Mandatory=$True)]
     [string]
