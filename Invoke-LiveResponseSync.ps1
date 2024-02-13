@@ -38,8 +38,14 @@ function Add-LiveResponseFile(){
         $AddRequest.Form.ParametersDescription = if ([bool]$HelpContent.parameters){ ($HelpContent.examples.example[0] | Out-String).trim()}
         $AddRequest.Form.Description = ($HelpContent.Description | Out-String).trim()
     }
-    $Response = Invoke-RestMethod @AddRequest
-    return $Response
+    try {
+        $Response = Invoke-RestMethod @AddRequest
+        return $Response
+    }
+    catch {
+        Write-Host "StatusCode:" $_.Exception.Response.StatusCode.value__ 
+        Write-Host "StatusDescription:" $_.Exception.Response.StatusDescription
+    }
 }
 
 function Remove-LiveResponseFile(){
@@ -54,8 +60,14 @@ function Remove-LiveResponseFile(){
         Method = 'Delete'
         Headers = $Headers
     }
-    $Response = Invoke-RestMethod @DeleteRequest
-    return $Response
+    try{
+        $Response = Invoke-RestMethod @DeleteRequest
+        return $Response
+    }
+    catch {
+        Write-Host "StatusCode:" $_.Exception.Response.StatusCode.value__ 
+        Write-Host "StatusDescription:" $_.Exception.Response.StatusDescription
+    }
 }
 
 function Get-LiveResponseLibrary(){
@@ -64,16 +76,19 @@ function Get-LiveResponseLibrary(){
         Method = 'Get'
         Headers = $Headers
     }
-    $Response = (Invoke-RestMethod @GetRequest).Value
-    return $Response
+    try{
+        $Response = (Invoke-RestMethod @GetRequest).Value
+        return $Response
+    }
+    catch{
+        Write-Host "StatusCode:" $_.Exception.Response.StatusCode.value__ 
+        Write-Host "StatusDescription:" $_.Exception.Response.StatusDescription
+    }
 }
 
 function main(){
-    [CmdletBinding()]
     param (
-        [Parameter()]
-        [string]
-        $SourcePath
+        [string]$SourcePath
     )
     $Files = Get-ChildItem -File -Path $SourcePath
     $Library = Get-LiveResponseLibrary
@@ -91,6 +106,7 @@ function main(){
             Write-Host "File $($File.Name) uploaded"
         }
         $Count += 1
+        # Handling rate limiting, tested in demo tenant and rate limit appears lower than the documented 100 requests/60s
         if ($count%5 -eq 0 -and $StopWatch.Elapsed.Seconds%60 -gt 0){
             Write-Host "Sleeping..."
             Start-Sleep (60 - $StopWatch.Elapsed.Seconds%60 )
